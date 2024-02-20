@@ -1,0 +1,14 @@
+CRITICAL - 2024-02-19 22:07:34 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\playground\app\Views\user\pegawai.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 77, Array)
+#1 C:\xampp\htdocs\playground\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\playground\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\playground\system\Common.php(1089): CodeIgniter\View\View->render('user/pegawai', Array, true)
+#4 C:\xampp\htdocs\playground\app\Controllers\Data_Pegawai.php(13): view('user/pegawai')
+#5 C:\xampp\htdocs\playground\system\CodeIgniter.php(832): App\Controllers\Data_Pegawai->index()
+#6 C:\xampp\htdocs\playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Data_Pegawai))
+#7 C:\xampp\htdocs\playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2024-02-19 22:18:05 --> Unknown column 'status' in 'field list'
+ERROR - 2024-02-19 22:18:50 --> Unknown column 'status' in 'field list'
