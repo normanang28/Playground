@@ -14,10 +14,14 @@
             <li><a href="<?= base_url('/Data_Pegawai')?>">Data Pegawai</a></li>
         </ul>
         </li>
-        <li><a href="<?= base_url('/Playground')?>" class="ai-icon" aria-expanded="false">
-                <i class="fa-solid fa-hands-holding-child" title="Playground"></i>
-                <span  class="nav-text">Playground</span>
-            </a>
+        <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="fa-solid fa-hands-holding-child" title="Playground"></i>
+            <span class="nav-text">Playground</span>
+        </a>
+        <ul aria-expanded="false">
+            <li><a href="<?= base_url('/Playground/permainan')?>">Permainan</a></li>
+            <li><a href="<?= base_url('/Playground/aktivitas')?>">Aktivitas</a></li>
+        </ul>
         </li>
         <hr class="sidebar-divider">
         <li><a href="<?= base_url('/My_Account')?>" class="ai-icon" aria-expanded="false">

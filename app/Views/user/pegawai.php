@@ -64,7 +64,7 @@
 					<thead>
 						<tr>
 							<th style="text-align: center;">Username</th>
-							<th style="text-align: center;">Nama Petugas</th>
+							<th style="text-align: center;">Nama Pegawai</th>
 							<th style="text-align: center;">No Telepon</th>
 							<th style="text-align: center;">Action</th>
 						</tr>
@@ -77,30 +77,10 @@
 							<td style="text-align: center;" class="text-capitalize"><?php echo $dataa->username?></td>
 							<td style="text-align: center;" class="text-capitalize"><?php echo $dataa->nama_pegawai?></td>
 							<td style="text-align: center;" class="text-capitalize"><?php echo $dataa->no_telp ?></td>
-							<td class="d-flex justify-content-between">
+							<td>
 
                                 <a href="<?= base_url('/Data_Pegawai/edit/'.$dataa->id_pegawai_user)?>"><button class="btn btn-warning"><i class="fa-regular fa-pen-to-square"></i></button></a>
-                                <button class="btn btn-danger" onclick="deletepetugas(<?= $dataa->id_pegawai_user ?>)"data-toggle="tooltip" data-placement="bottom"><i class="fa-solid fa-trash"></i></button>
-                                
-                                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-								<script>
-								function deletepetugas(userId) {
-						            Swal.fire({
-						                title: 'Konfirmasi Hapus Data',
-						                text: 'Apakah anda yakin ingin menghapus data ini?',
-						                icon: 'warning',
-						                showCancelButton: true,
-						                confirmButtonColor: '#3085d6',
-						                cancelButtonColor: '#d33',
-						                confirmButtonText: 'Ya, Hapus',
-						                cancelButtonText: 'Kembali'
-						            }).then((result) => {
-						                if (result.isConfirmed) {
-						                    window.location.href = `/Data_Pegawai/hapus/${userId}`;
-						                }
-						            });
-						        }
-								</script>
+                                <a href="<?= base_url('/Data_Pegawai/hapus/'.$dataa->id_pegawai_user)?>"><button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button></a>
                             </td>
 						</tr>
                     <?php }?>

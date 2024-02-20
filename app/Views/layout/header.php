@@ -16,7 +16,6 @@
 	<title>Point Of Sale</title>
 	<base href="<?php echo base_url('assets') ?>/">
 
-	<link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('/logo/logo_kasir.png')?>">
 	<link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 	<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
 
@@ -37,11 +36,6 @@
 
 
 		<div class="nav-header">
-			<a class="brand-logo" href="<?= base_url('/Dashboard')?>" >
-				<img class="logo-abbr" src="<?= base_url('/logo/logo_kasir.png')?>" alt="" style="width: 70px; height: 50px;">
-				<img class="brand-title" src="<?= base_url('/logo/logo_title.png/'.session()->get('text_sekolah'))?>" alt="" style="max-width: 100px; height: auto;">
-			</a>
-
 			<div class="nav-control">
 				<div class="hamburger">
 					<span class="line"></span><span class="line"></span><span class="line"></span>

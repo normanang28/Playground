@@ -55,6 +55,60 @@ class Data_Pegawai extends BaseController
         return redirect()->to('/Data_Pegawai');
     }  
 
+    public function edit($id)
+    {
+        $model=new M_model();
+        $where2=array('pegawai.id_pegawai_user'=>$id);
+
+        $on='pegawai.id_pegawai_user=user.id_user';
+        $data['data']=$model->edit_user('pegawai', 'user',$on, $where2);
+
+        $id=session()->get('id');
+        $where=array('id_user'=>$id);
+
+        $where=array('id_user' => session()->get('id'));
+        $data['foto']=$model->getRow('user',$where);
+
+        echo view('layout/header',$data);
+        echo view('layout/menu');
+        echo view('user/edit_pegawai');
+        echo view('layout/footer');
+    }
+
+    public function aksi_edit()
+    {
+        $id= $this->request->getPost('id');    
+        $username= $this->request->getPost('username');
+        $level= $this->request->getPost('level');
+        $nama_pegawai= $this->request->getPost('nama_pegawai');
+        $no_telp= $this->request->getPost('no_telp');
+
+        $where=array('id_user'=>$id);    
+        $where2=array('id_pegawai_user'=>$id);
+        if ($password !='') {
+            $user=array(
+                'username'=>$username,
+                'level'=>$level,
+            );
+        }else{
+            $user=array(
+                'username'=>$username,
+                'level'=>$level,
+            );
+        }
+
+        $model=new M_model();
+        $model->edit('user', $user,$where);
+
+        $pegawai=array(
+            'nama_pegawai'=>$nama_pegawai,
+            'no_telp'=>$no_telp,
+        );
+
+        $model->edit('pegawai', $pegawai, $where2);
+        return redirect()->to('/Data_Pegawai');
+    }
+
     public function hapus($id)
     {
         $model=new M_model();

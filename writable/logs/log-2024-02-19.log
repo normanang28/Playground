@@ -12,3 +12,16 @@ CRITICAL - 2024-02-19 22:07:34 --> Invalid argument supplied for foreach()
 #10 {main}
 ERROR - 2024-02-19 22:18:05 --> Unknown column 'status' in 'field list'
 ERROR - 2024-02-19 22:18:50 --> Unknown column 'status' in 'field list'
+CRITICAL - 2024-02-19 23:46:38 --> Invalid file: header.php
+#0 C:\xampp\htdocs\playground\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('header.php')
+#1 C:\xampp\htdocs\playground\system\Common.php(1089): CodeIgniter\View\View->render('header', Array, true)
+#2 C:\xampp\htdocs\playground\app\Controllers\Data_Pegawai.php(72): view('header', Array)
+#3 C:\xampp\htdocs\playground\system\CodeIgniter.php(832): App\Controllers\Data_Pegawai->edit('3')
+#4 C:\xampp\htdocs\playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Data_Pegawai))
+#5 C:\xampp\htdocs\playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+ERROR - 2024-02-19 23:52:11 --> Unknown column 'id_petugas_user' in 'where clause'
+ERROR - 2024-02-19 23:58:47 --> Unknown column 'id_petugas_user' in 'where clause'
+ERROR - 2024-02-19 23:58:53 --> Unknown column 'id_petugas_user' in 'where clause'
