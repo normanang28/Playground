@@ -177,4 +177,60 @@ class Playground extends BaseController
             return redirect()->to('/');
         }
     }
+
+    public function pembelian_barang()
+    {
+    if(session()->get('level')== 1) {
+
+        $model=new M_model();
+
+        $on='pembelian_barang.maker_pb=user.id_user';
+        $data['data']=$model->fusionOderBy('pembelian_barang', 'user', $on, 'tanggal_pb');
+
+        $id=session()->get('id');
+        $where=array('id_user'=>$id);
+
+        $where=array('id_user' => session()->get('id'));
+        $data['foto']=$model->getRow('user',$where);
+
+        echo view('layout/header',$data);
+        echo view('layout/menu');
+        echo view('playground/pembelian_barang/pembelian_barang');
+        echo view('layout/footer'); 
+
+        }else{
+            return redirect()->to('/');
+        }
+    }
+
+    public function tambah_pembelian_barang()
+    {
+        $model = new M_model();
+        $nama_pb = $this->request->getPost('nama_pb');
+        $nominal_pb = $this->request->getPost('nominal_pb');
+        $maker_pb = session()->get('id');
+
+        $data = array(
+            'nama_pb' => $nama_pb,
+            'nominal_pb' => $nominal_pb,
+            'maker_pb' => $maker_pb
+        );
+
+        $model->simpan('pembelian_barang', $data);
+        return redirect()->to('/Playground/pembelian_barang');
+    }
+
+    public function hapus_pembelian_barang($id)
+    {
+    if(session()->get('level')== 1) {
+
+        $model=new M_model();
+        $where=array('id_pb '=>$id);
+        $model->hapus('pembelian_barang',$where);
+        return redirect()->to('/Playground/pembelian_barang');
+
+        }else{
+            return redirect()->to('/');
+        }
+    }
 }

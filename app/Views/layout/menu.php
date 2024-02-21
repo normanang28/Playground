@@ -26,14 +26,21 @@
         <ul aria-expanded="false">
             <li><a href="<?= base_url('/Playground/list_permainan')?>">List Permainan</a></li>
             <li><a href="<?= base_url('/Playground/pembelian_tiket')?>">Pembelian Tiket</a></li>
+  <?php  if(session()->get('level')== 1) { ?>
+            <li><a href="<?= base_url('/Playground/pembelian_barang')?>">Pembelian Barang</a></li>
+  <?php }else{} ?>
         </ul>
         </li>
   <?php }else{} ?>
   <?php  if(session()->get('level')== 1) { ?>
-        <li><a href="<?= base_url('/Laporan_Income')?>" class="ai-icon" aria-expanded="false">
-            <i class="fa-solid fa-laptop-file" title="Laporan Income"></i>
-            <span class="nav-text">Laporan Income</span>
+        <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="fa-solid fa-laptop-file" title="Laporan"></i>
+            <span class="nav-text">Laporan</span>
         </a>
+        <ul aria-expanded="false">
+            <li><a href="<?= base_url('/Laporan/0.')?>">Laporan Income</a></li>
+            <li><a href="<?= base_url('/Laporan/laporan_pengeluaran')?>">Laporan Pengeluaran</a></li>
+        </ul>
         </li>
   <?php }else{} ?>
         <hr class="sidebar-divider">

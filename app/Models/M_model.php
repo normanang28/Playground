@@ -883,6 +883,18 @@ class M_model extends model
 		)->getResult();
 	}
 
+	public function filter_pengeluaran ($table, $awal,$akhir)
+	{
+		return $this->db->query(
+			"SELECT *
+			FROM ".$table."
+			join user ON ".$table.".maker_pb = user.id_user
+			WHERE ".$table.".taggal_laporan
+			BETWEEN '".$awal."'
+			AND '".$akhir."'"
+		)->getResult();
+	}
+
 	public function updateData($table, $data, $where)
     {
         $this->db->update($table, $data, $where);

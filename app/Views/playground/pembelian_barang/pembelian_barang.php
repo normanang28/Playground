@@ -3,21 +3,7 @@
 		<div class="card-body">
 			<div class="table-responsive">
 				<div class="container mt-4">
-					<div class="alert alert-info" role="alert" data-aos="fade-down" data-aos-delay="100">
-		                <i class="fa-solid fa-triangle-exclamation"></i>
-		                Data Pembelian Tiket yang diinpit tidak dapat melakukan pengubahan data, dan setiap "Pembelian Tiket" hanya dapat dilakukan dalam metode pembayaran <b>Cash</b>.
-		            </div>
-		            <style>
-		            @keyframes blink {
-		              0% { opacity: 1; }
-		              50% { opacity: 0; }
-		              100% { opacity: 1; }
-		            }
 
-		            .alert-info i.fa-triangle-exclamation {
-		              animation: blink 1s infinite;
-		            }
-		            </style>
 				    <div class="d-flex justify-content-between align-items-center mb-3">
 				        <h1></h1>
 				        <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">
@@ -31,31 +17,18 @@
 				                        <h4 class="modal-title">Apakah anda yakin ingin menambah data ini?</h4>
 				                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 				                    </div>
-									<form id="imageForm" class="form-horizontal form-label-left" action="<?= base_url('Playground/tambah_pembelian_tiket')?>" method="post">
+									<form id="imageForm" class="form-horizontal form-label-left" action="<?= base_url('Playground/tambah_pembelian_barang')?>" method="post">
 									    <div class="modal-body">
 									        <div class="row">
 									            <div class="mb-3 col-md-6">
-									                <label class="form-label">Nama Permainan<span style="color: black;"> :</span></label>
-									                <select name="id_permainan" class="form-control text-capitalize" id="id_permainan" required autocomplete="on" onchange="updateTotalHarga()">
-									                    <option disabled selected>Pilih Nama Permainan</option>
-									                    <?php foreach ($p as $permainan) {?>
-									                        <option class="text-capitalize" value="<?php echo $permainan->id_permainan ?>" data-harga="<?php echo $permainan->harga_permainan ?>"><?php echo $permainan->nama_permainan ?> - Rp <?php echo $permainan->harga_permainan ?>,00</option>
-									                    <?php } ?>
-									                </select>
+									                <label class="form-label">Nama Barang<span style="color: black;"> :</span></label>
+									                <input type="text" id="nama_pb" name="nama_pb" class="form-control text-capitalize" placeholder="Nama Barang" autocomplete="on">
 									            </div>
 									            <div class="mb-3 col-md-6">
-									                <label class="form-label">Nama Pemain<span style="color: black;"> :</span></label>
-									                <input type="text" id="nama_pemain" name="nama_pemain" class="form-control text-capitalize" placeholder="Nama Pemain" autocomplete="on">
-									            </div>
-									            <div class="mb-3 col-md-6">
-									                <label class="form-label">Durasi<span style="color: black;"> :</span></label>
-									                <input type="text" id="durasi" name="durasi" class="form-control text-capitalize" placeholder="Durasi" oninput="Durasi(this); updateTotalHarga()" autocomplete="on">
-									            </div>
-									            <div class="mb-3 col-md-6">
-									                <label class="form-label">Total Harga<span style="color: black;"> :</span></label>
+									                <label class="form-label">Nominal Pembelian<span style="color: black;"> :</span></label>
 									                <div class="input-group mb-3 input-basic">
 									                    <span class="input-group-text">Rp</span>
-									                    <input readonly type="text" id="total_harga" name="total_harga" class="form-control text-capitalize" placeholder="Total Harga" autocomplete="on">
+									                    <input type="text" id="nominal_pb" name="nominal_pb" class="form-control text-capitalize" placeholder="Nominal Pembelian" autocomplete="on">
 									                    <span class="input-group-text">,00</span>
 									                </div>
 									            </div>
@@ -108,10 +81,9 @@
 				<table id="example" class="table items-table table table-bordered table-striped verticle-middle table-responsive-sm" style="min-width: 100%">
 					<thead>
 						<tr>
-							<th style="text-align: center;">Nama Permainan</th>
-							<th style="text-align: center;">Nama pemain</th>
-							<th style="text-align: center;">Durasi</th>
-							<th style="text-align: center;">Total Harga</th>
+							<th style="text-align: center;">Nama Barang</th>
+							<th style="text-align: center;">Nominal Pembelian</th>
+							<th style="text-align: center;">Username</th>
 							<th style="text-align: center;">Tanggal Pembelian</th>
 							<th style="text-align: center;">Action</th>
 						</tr>
@@ -121,14 +93,13 @@
                     $no=1;
                     foreach ($data as $dataa){?>
 						<tr>
-							<td style="text-align: center;" class="text-capitalize"><?php echo $dataa->nama_permainan ?></td>
-							<td style="text-align: center;" class="text-capitalize"><?php echo $dataa->nama_pemain ?></td>
-							<td style="text-align: center;" class="text-capitalize"><?php echo $dataa->durasi ?> Jam</td>
-							<td style="text-align: center;" class="text-capitalize">Rp <?php echo $dataa->total_harga?>,00</td>
-							<td style="text-align: center;" class="text-capitalize"><?php echo $dataa->tanggal_playground?></td>
+							<td style="text-align: center;" class="text-capitalize"><?php echo $dataa->nama_pb ?></td>
+	                        <td style="text-align: center;" class="text-capitalize">Rp. <?php echo number_format($dataa->nominal_pb, 2, ',', '.') ?></td>
+							<td style="text-align: center;" class="text-capitalize"><?php echo $dataa->username ?></td>
+							<td style="text-align: center;" class="text-capitalize"><?php echo $dataa->tanggal_pb?></td>
 							<td>
 							<div class="text-center mb-1">
-							    <a onclick="openDeleteModal('<?= base_url('/Playground/hapus_pembelian_tiket/'.$dataa->id_playground )?>')" class="mx-2">
+							    <a onclick="openDeleteModal('<?= base_url('/Playground/hapus_pembelian_barang/'.$dataa->id_pb )?>')" class="mx-2">
 							        <button type="button" class="btn btn-danger">
 							            <i class="fa-solid fa-trash"></i>
 							        </button>

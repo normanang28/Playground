@@ -3,11 +3,12 @@
     <div class="x_title">
       <h2>
         <?php if ($kunci=='view_income') {
+        }else if ($kunci=='view_pengeluaran') {
         }else{
         }
         ?>
       </h2>
-      <!--  -->
+
       <div class="clearfix"></div>
     </div>
     <div class="x_content">
@@ -15,7 +16,9 @@
 
       action="
       <?php if ($kunci=='view_income') {
-        echo base_url('Laporan_Income/Print');
+        echo base_url('Laporan/print_income');
+      }else if ($kunci=='view_pengeluaran') {
+        echo base_url('Laporan/print_pengeluaran');
         }else{
         }
       ?>" method="post">
@@ -47,7 +50,9 @@
 
     action="
     <?php if ($kunci=='view_income') {
-      echo base_url('Laporan_Income/pdf');
+      echo base_url('Laporan/pdf_income');
+      }else if ($kunci=='view_pengeluaran') {
+        echo base_url('Laporan/pdf_pengeluaran');
       }else{
       }
     ?>" method="post" target="_blank">
@@ -79,7 +84,9 @@
 
   action="
   <?php if ($kunci=='view_income') {
-    echo base_url('Laporan_Income/excel');
+    echo base_url('Laporan/excel_income');
+    }else if ($kunci=='view_pengeluaran') {
+    echo base_url('Laporan/excel_pengeluaran');
     }else{
     }
   ?>" method="post">
@@ -109,6 +116,8 @@
 action="
 <?php if ($kunci=='view_income') {
   echo base_url('Playground/pembelian_tiket');
+}else if ($kunci=='view_pengeluaran') {
+  echo base_url('Playground/pembelian_barang');
   }else{
   }
 ?>" method="post">

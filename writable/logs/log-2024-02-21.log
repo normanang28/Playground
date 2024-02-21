@@ -90,3 +90,58 @@ CRITICAL - 2024-02-21 18:33:31 --> Too few arguments to function App\Controllers
 #3 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #4 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #5 {main}
+ERROR - 2024-02-21 16:22:25 --> Unknown column 'tanggal_playground' in 'order clause'
+CRITICAL - 2024-02-21 16:22:25 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\Playground\app\Controllers\Playground.php(188): App\Models\M_model->fusionOderBy('pembelian_baran...', 'user', 'pembelian_baran...', 'tanggal_playgro...')
+#1 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Playground->pembelian_barang()
+#2 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Playground))
+#3 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-21 16:23:38 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\Playground\app\Views\playground\pembelian_barang\pembelian_barang.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 27, Array)
+#1 C:\xampp\htdocs\Playground\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Playground\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\Playground\system\Common.php(1089): CodeIgniter\View\View->render('playground/pemb...', Array, true)
+#4 C:\xampp\htdocs\Playground\app\Controllers\Playground.php(198): view('playground/pemb...')
+#5 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Playground->pembelian_barang()
+#6 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Playground))
+#7 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2024-02-21 16:44:27 --> Unknown column 'pembelian_barang.tanggal_laporan' in 'where clause'
+CRITICAL - 2024-02-21 16:44:27 --> Call to a member function getResult() on bool
+#0 C:\xampp\htdocs\Playground\app\Controllers\Laporan.php(206): App\Models\M_model->filter_income('pembelian_baran...', '2024-02-21', '2024-02-21')
+#1 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Laporan->print_pengeluaran()
+#2 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#3 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-21 16:45:51 --> Invalid file: laporan/laporan_pengeluaran.php
+#0 C:\xampp\htdocs\Playground\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('laporan/laporan...')
+#1 C:\xampp\htdocs\Playground\system\Common.php(1089): CodeIgniter\View\View->render('laporan/laporan...', Array, true)
+#2 C:\xampp\htdocs\Playground\app\Controllers\Laporan.php(207): view('laporan/laporan...', Array)
+#3 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Laporan->print_pengeluaran()
+#4 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#5 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+ERROR - 2024-02-21 17:23:29 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2024-02-21 17:23:29 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\xampp\htdocs\Playground\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\Playground\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\Playground\app\Models\M_model.php(444): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#3 C:\xampp\htdocs\Playground\app\Controllers\Home.php(32): App\Models\M_model->getarray('user', Array)
+#4 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Home->aksi_login()
+#5 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
