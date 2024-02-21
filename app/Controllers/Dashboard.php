@@ -11,6 +11,8 @@ class Dashboard extends BaseController
 {
     public function index()
     {
+        if(session()->get('id')>0) {
+
         $model=new M_model();
         $on='playground.id_permainan_playground=permainan.id_permainan';
         $data['data']=$model->fusionOderBy('playground', 'permainan', $on, 'jam_mulai');
@@ -30,6 +32,10 @@ class Dashboard extends BaseController
         echo view ('dashboard_1', $data);
         echo view ('dashboard_2', $data2);
         echo view ('layout/footer');
+
+        }else{
+            return redirect()->to('/');
+        }
     }
 
     public function edit_status($id_playground)

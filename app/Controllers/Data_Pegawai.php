@@ -11,6 +11,8 @@ class Data_Pegawai extends BaseController
 {
     public function index()
     {
+    if(session()->get('level')== 1) {
+
         $model=new M_model();
         $on='pegawai.id_pegawai_user=user.id_user';
         $data['data']=$model->fusionOderBy('pegawai', 'user', $on, 'tanggal_pegawai');
@@ -25,6 +27,10 @@ class Data_Pegawai extends BaseController
         echo view('layout/menu');
         echo view('user/pegawai');
         echo view('layout/footer'); 
+
+        }else{
+            return redirect()->to('/');
+        }
     }
 
     public function tambah()
@@ -60,6 +66,8 @@ class Data_Pegawai extends BaseController
 
     public function edit($id)
     {
+    if(session()->get('level')== 1) {
+
         $model=new M_model();
         $where2=array('pegawai.id_pegawai_user'=>$id);
 
@@ -76,6 +84,10 @@ class Data_Pegawai extends BaseController
         echo view('layout/menu');
         echo view('user/edit_pegawai');
         echo view('layout/footer');
+
+        }else{
+            return redirect()->to('/');
+        }
     }
 
     public function aksi_edit()
@@ -114,6 +126,8 @@ class Data_Pegawai extends BaseController
 
     public function hapus($id)
     {
+    if(session()->get('level')== 1) {
+
         $model=new M_model();
         $where2=array('id_user'=>$id);
         $where=array('id_pegawai_user'=>$id);
@@ -121,10 +135,16 @@ class Data_Pegawai extends BaseController
         $model->hapus('pegawai',$where);
         $model->hapus('user',$where2);
         return redirect()->to('/Data_Pegawai');
+
+        }else{
+            return redirect()->to('/');
+        }
     }
 
     public function reset_password($id)
     {
+    if(session()->get('level')== 1) {
+
         $model=new M_model();
         $where=array('id_user'=>$id);
         $data=array(
@@ -133,5 +153,9 @@ class Data_Pegawai extends BaseController
         $model->edit('user',$data,$where);
 
         return redirect()->to('/Data_Pegawai');
+
+        }else{
+            return redirect()->to('/');
+        }
     }
 }

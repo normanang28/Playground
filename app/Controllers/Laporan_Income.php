@@ -15,6 +15,8 @@ class Laporan_Income extends BaseController
 {
     public function index()
     {
+    if(session()->get('level')== 1) {
+
         $model=new M_model();
         $data['kunci']='view_income';
 
@@ -26,19 +28,31 @@ class Laporan_Income extends BaseController
         echo view('layout/menu');
         echo view('laporan/filter');
         echo view('layout/footer');
+
+        }else{
+            return redirect()->to('/');
+        }
     }
 
     public function print()
     {
+    if(session()->get('level')== 1) {
+
         $model=new M_model();
         $awal= $this->request->getPost('awal');
         $akhir= $this->request->getPost('akhir');
         $data['data']=$model->filter_income('playground',$awal,$akhir);
         echo view('laporan/laporan_income',$data);
+
+        }else{
+            return redirect()->to('/');
+        }
     }
 
     public function pdf()
     {
+    if(session()->get('level')== 1) {
+
         $model=new M_model();
         $awal= $this->request->getPost('awal');
         $akhir= $this->request->getPost('akhir');
@@ -50,10 +64,16 @@ class Laporan_Income extends BaseController
         $dompdf->render();
         $dompdf->stream('my.pdf', array('Attachment'=>false));
         exit();    
+
+        }else{
+            return redirect()->to('/');
+        }
     }
 
     public function excel()
     {
+    if(session()->get('level')== 1) {
+
         $model = new M_model();
         $awal = $this->request->getPost('awal');
         $akhir = $this->request->getPost('akhir');
@@ -149,5 +169,9 @@ class Laporan_Income extends BaseController
         header('Content-Disposition: attachment; filename=' . $fileName . '.xlsx');
         header('Cache-Control: max-age=0');
         $writer->save('php://output');
+
+        }else{
+            return redirect()->to('/');
+        }
     }
 }

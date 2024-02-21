@@ -11,6 +11,8 @@ class Playground extends BaseController
 {
     public function list_permainan()
     {
+        if(session()->get('id')>0) {
+
         $model=new M_model();
         $on='permainan.maker_permainan=user.id_user';
         $data['data']=$model->fusionOderBy('permainan', 'user', $on, 'tanggal_permainan');
@@ -25,6 +27,10 @@ class Playground extends BaseController
         echo view('layout/menu');
         echo view('playground/list_permainan/list_permainan');
         echo view('layout/footer'); 
+
+        }else{
+            return redirect()->to('/');
+        }
     }
 
     public function tambah_list_permainan()
@@ -46,6 +52,8 @@ class Playground extends BaseController
 
     public function edit_list_permainan($id)
     {
+        if(session()->get('id')>0) {
+
         $model=new M_model();
         $where2=array('permainan.id_permainan '=>$id);
 
@@ -62,6 +70,10 @@ class Playground extends BaseController
         echo view('layout/menu');
         echo view('playground/list_permainan/edit_list_permainan');
         echo view('layout/footer');
+
+        }else{
+            return redirect()->to('/');
+        }
     }
 
     public function aksi_edit_list_permainan()
@@ -85,14 +97,22 @@ class Playground extends BaseController
 
     public function hapus_list_permainan($id)
     {
+        if(session()->get('id')>0) {
+
         $model=new M_model();
         $where=array('id_permainan '=>$id);
         $model->hapus('permainan',$where);
         return redirect()->to('/Playground/list_permainan');
+
+        }else{
+            return redirect()->to('/');
+        }
     }
 
     public function pembelian_tiket()
     {
+        if(session()->get('id')>0) {
+
         $model=new M_model();
         $where2=array('username'=>session()->get('username'));
 
@@ -112,6 +132,10 @@ class Playground extends BaseController
         echo view('layout/menu');
         echo view('playground/pembelian_tiket/pembelian_tiket');
         echo view('layout/footer'); 
+
+        }else{
+            return redirect()->to('/');
+        }
     }
 
     public function tambah_pembelian_tiket()
@@ -142,9 +166,15 @@ class Playground extends BaseController
 
     public function hapus_pembelian_tiket($id)
     {
+        if(session()->get('id')>0) {
+
         $model=new M_model();
         $where=array('id_playground '=>$id);
         $model->hapus('playground',$where);
         return redirect()->to('/Playground/pembelian_tiket');
+
+        }else{
+            return redirect()->to('/');
+        }
     }
 }

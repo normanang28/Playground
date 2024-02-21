@@ -1,11 +1,14 @@
 <div class="deznav">
     <div class="deznav-scroll">
         <ul class="metismenu" id="menu">
+  <?php  if(session()->get('id')>0) { ?>
         <li><a href="<?= base_url('/Dashboard')?>" class="ai-icon" aria-expanded="false">
                 <i class="fa-solid fa-house-lock" title="Dashboard"></i>
                 <span  class="nav-text">Dashboard</span>
             </a>
         </li>
+  <?php }else{} ?>
+  <?php  if(session()->get('level')== 1) { ?>
         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
             <i class="fa-solid fa-chalkboard-user" title="User"></i>
             <span class="nav-text">User</span>
@@ -14,6 +17,8 @@
             <li><a href="<?= base_url('/Data_Pegawai')?>">Data Pegawai</a></li>
         </ul>
         </li>
+  <?php }else{} ?>
+  <?php  if(session()->get('level')== 1 || session()->get('level')== 2) { ?>
         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
             <i class="fa-solid fa-hands-holding-child" title="Playground"></i>
             <span class="nav-text">Playground</span>
@@ -23,17 +28,22 @@
             <li><a href="<?= base_url('/Playground/pembelian_tiket')?>">Pembelian Tiket</a></li>
         </ul>
         </li>
+  <?php }else{} ?>
+  <?php  if(session()->get('level')== 1) { ?>
         <li><a href="<?= base_url('/Laporan_Income')?>" class="ai-icon" aria-expanded="false">
             <i class="fa-solid fa-laptop-file" title="Laporan Income"></i>
             <span class="nav-text">Laporan Income</span>
         </a>
         </li>
+  <?php }else{} ?>
         <hr class="sidebar-divider">
+  <?php  if(session()->get('id')>0) { ?>
         <li><a href="<?= base_url('/My_Account')?>" class="ai-icon" aria-expanded="false">
             <i class="fa-solid fa-user-secret" title="My Account"></i>
             <span class="nav-text">My Account</span>
         </a>
         </li>
+  <?php }else{} ?>
         <li><a href="<?= base_url('/Home/logout')?>" class="ai-icon" aria-expanded="false">
             <i class="fa-solid fa-right-from-bracket" title="Log Out"></i>
             <span class="nav-text">Log Out</span>
