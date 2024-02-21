@@ -34,14 +34,18 @@
                     <label class="form-label">Level<span style="color: red;">*</span></label>
                     <div class="col-12">
                         <select id="level" class="form-control col-12" data-validate-length-range="6" data-validate-words="2" name="level" required="required">
-                          <option value="<?= $data->level?>"><?= $data->level; ?></option>
-                          <option value="1">Super Admin</option>
-                          <option value="2">Petugas Playground</option>
+                          <?php if ($data->level == 1): ?>
+                            <option value="1" selected>Super Admin</option>
+                            <option value="2">Petugas Playground</option>
+                        <?php elseif ($data->level == 2): ?>
+                            <option value="1">Super Admin</option>
+                            <option value="2" selected>Petugas Playground</option>
+                        <?php endif; ?>
                       </select>
                   </div>
               </div>
           </div>
-          <a href="<?= base_url('/Data_Pegawai/')?>" type="submit" class="btn btn-primary">Cancel</a></button>
+          <a href="<?= base_url('/Data_Pegawai/')?>" type="submit" class="btn btn-primary">Kembali</a></button>
           <button type="submit" id="updateButton" class="btn btn-success">Edit Data</button>
       </form>
   </div>

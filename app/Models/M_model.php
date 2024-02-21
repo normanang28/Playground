@@ -158,14 +158,27 @@ class M_model extends model
 	// 	)->getResult();
 	// }
 
-	public function filter_incoming_items ($table, $awal,$akhir)
+	public function filter_pendataan_barang ($table, $awal,$akhir)
 	{
 		return $this->db->query(
 			"SELECT *
 			FROM ".$table."
-			join barang ON ".$table.".id_masuk_barang = barang.id_barang
-			join user ON ".$table.".maker_barang_masuk = user.id_user
-			WHERE ".$table.".barang_masuk_laporan
+			join barang ON ".$table.".id_barang_barang = barang.id_barang
+			join user ON ".$table.".maker_bm = user.id_user
+			WHERE ".$table.".tgl_bm
+			BETWEEN '".$awal."'
+			AND '".$akhir."'"
+		)->getResult();
+	}
+
+	public function filter_pengeluaran_barang ($table, $awal,$akhir)
+	{
+		return $this->db->query(
+			"SELECT *
+			FROM ".$table."
+			join barang ON ".$table.".id_barang_barang = barang.id_barang
+			join user ON ".$table.".maker_bk = user.id_user
+			WHERE ".$table.".tgl_bk
 			BETWEEN '".$awal."'
 			AND '".$akhir."'"
 		)->getResult();
@@ -462,6 +475,11 @@ class M_model extends model
 		return $this->db->table($table1)->join($table2, $on)->orderBy($column, 'DESC')->get()->getResult();
 	}
 
+	public function fusionOderByASC($table1, $table2, $on, $column)
+	{
+		return $this->db->table($table1)->join($table2, $on)->orderBy($column, 'ASC')->get()->getResult();
+	}
+
 	public function monsterOderBy($table1, $table2, $table3, $table4, $table5, $on, $on2, $on3, $on4, $column)
 	{
 		return $this->db->table($table1)->join($table2, $on)->join($table3, $on2)->join($table4, $on3)->join($table5, $on4)->orderBy($column, 'DESC')->get()->getResult();
@@ -540,6 +558,16 @@ class M_model extends model
 	public function superOderBy($table1, $table2, $table3, $on, $on2, $column)
 	{
 		return $this->db->table($table1)->join($table2, $on)->join($table3, $on2)->orderBy($column, 'DESC')->get()->getResult();
+	}
+
+	public function sumData($table, $column)
+    {
+        return $this->db->table($table)->selectSum($column)->get()->getRowArray();
+    }
+    
+	public function search($table1, $table2, $table3, $on1, $on2, $column, $where)
+	{
+		return $this->db->table($table1)->join($table2, $on1)->join($table3, $on2)->groupStart()->like($column, $where)->groupEnd()->get()->getResult();
 	}
 
 	public function invoice ($table1, $table2, $table3, $on, $on2, $column, $where)
@@ -832,4 +860,31 @@ class M_model extends model
 	{
 		return $this->db->table($table1)->join($table2, $on)->join($table3, $on2)->getWhere($where)->getResult();
 	}
+
+	public function print_invoice($table, $username) {
+	    return $this->db->query(
+	        "SELECT *
+	        FROM ".$table."
+	        JOIN barang ON ".$table.".id_barang_barang=barang.id_barang
+	        JOIN user ON ".$table.".maker_bk=user.id_user
+	        WHERE user.username = '".$username."'"
+	    )->getResult();
+	}
+
+	public function filter_income ($table, $awal,$akhir)
+	{
+		return $this->db->query(
+			"SELECT *
+			FROM ".$table."
+			join permainan ON ".$table.".id_permainan_playground = permainan.id_permainan
+			WHERE ".$table.".tanggal_laporan
+			BETWEEN '".$awal."'
+			AND '".$akhir."'"
+		)->getResult();
+	}
+
+	public function updateData($table, $data, $where)
+    {
+        $this->db->update($table, $data, $where);
+    }
 }

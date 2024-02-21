@@ -1,0 +1,60 @@
+ERROR - 2024-02-20 03:55:51 --> Column 'maker_pegawai' cannot be null
+ERROR - 2024-02-20 03:56:50 --> Column 'maker_pegawai' cannot be null
+ERROR - 2024-02-20 04:16:50 --> Table 'playground.petugas' doesn't exist
+CRITICAL - 2024-02-20 04:16:50 --> Call to a member function getRow() on bool
+#0 C:\xampp\htdocs\Playground\app\Controllers\My_Account.php(21): App\Models\M_model->getRow('petugas', Array)
+#1 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\My_Account->index()
+#2 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\My_Account))
+#3 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2024-02-20 04:17:09 --> Table 'playground.petugas' doesn't exist
+CRITICAL - 2024-02-20 04:17:09 --> Call to a member function getRow() on bool
+#0 C:\xampp\htdocs\Playground\app\Controllers\My_Account.php(21): App\Models\M_model->getRow('petugas', Array)
+#1 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\My_Account->index()
+#2 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\My_Account))
+#3 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2024-02-20 04:17:10 --> Table 'playground.petugas' doesn't exist
+CRITICAL - 2024-02-20 04:17:10 --> Call to a member function getRow() on bool
+#0 C:\xampp\htdocs\Playground\app\Controllers\My_Account.php(21): App\Models\M_model->getRow('petugas', Array)
+#1 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\My_Account->index()
+#2 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\My_Account))
+#3 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2024-02-20 04:17:13 --> Table 'playground.petugas' doesn't exist
+CRITICAL - 2024-02-20 04:17:13 --> Call to a member function getRow() on bool
+#0 C:\xampp\htdocs\Playground\app\Controllers\My_Account.php(21): App\Models\M_model->getRow('petugas', Array)
+#1 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\My_Account->index()
+#2 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\My_Account))
+#3 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2024-02-20 05:58:35 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\Playground\app\Views\playground\pembelian_tiket\pembelian_tiket.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 C:\xampp\htdocs\Playground\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Playground\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\Playground\system\Common.php(1089): CodeIgniter\View\View->render('playground/pemb...', Array, true)
+#4 C:\xampp\htdocs\Playground\app\Controllers\Playground.php(109): view('playground/pemb...')
+#5 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Playground->pembelian_tiket()
+#6 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Playground))
+#7 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2024-02-20 06:21:06 --> Unknown column 'id_permainan_playground' in 'field list'
+ERROR - 2024-02-20 06:21:34 --> Column 'total_harga' cannot be null
+ERROR - 2024-02-20 06:22:19 --> Column 'total_harga' cannot be null
+CRITICAL - 2024-02-20 07:45:19 --> Class 'App\Controllers\Border' not found
+#0 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Laporan_Income->excel()
+#1 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan_Income))
+#2 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}

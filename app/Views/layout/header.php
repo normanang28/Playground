@@ -13,7 +13,7 @@
 	<meta property="og:image" content="https://davur.dexignzone.com/xhtml/page-error-404.html" />
 	<meta name="format-detection" content="telephone=no">
 
-	<title>Point Of Sale</title>
+	<title>PlayGround</title>
 	<base href="<?php echo base_url('assets') ?>/">
 
 	<link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">

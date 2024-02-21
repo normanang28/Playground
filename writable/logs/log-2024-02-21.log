@@ -1,0 +1,92 @@
+ERROR - 2024-02-21 14:16:07 --> Column 'durasi' cannot be null
+ERROR - 2024-02-21 14:16:35 --> Column 'durasi' cannot be null
+ERROR - 2024-02-21 14:17:19 --> Column 'durasi' cannot be null
+ERROR - 2024-02-21 14:18:23 --> Column 'durasi' cannot be null
+ERROR - 2024-02-21 14:19:02 --> Column 'durasi' cannot be null
+ERROR - 2024-02-21 14:22:24 --> Column 'durasi' cannot be null
+ERROR - 2024-02-21 16:50:19 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2024-02-21 16:50:19 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\xampp\htdocs\Playground\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\Playground\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\Playground\app\Models\M_model.php(580): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#3 C:\xampp\htdocs\Playground\app\Controllers\Playground.php(101): App\Models\M_model->superOderByWhere('playground', 'permainan', 'user', 'playground.id_p...', 'playground.make...', 'tanggal_playgro...', Array)
+#4 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Playground->pembelian_tiket()
+#5 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Playground))
+#6 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+ERROR - 2024-02-21 16:50:30 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2024-02-21 16:50:30 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\xampp\htdocs\Playground\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\Playground\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\Playground\app\Models\M_model.php(580): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#3 C:\xampp\htdocs\Playground\app\Controllers\Playground.php(101): App\Models\M_model->superOderByWhere('playground', 'permainan', 'user', 'playground.id_p...', 'playground.make...', 'tanggal_playgro...', Array)
+#4 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Playground->pembelian_tiket()
+#5 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Playground))
+#6 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2024-02-21 17:56:18 --> Too few arguments to function App\Controllers\Dashboard::editStatus(), 0 passed in C:\xampp\htdocs\Playground\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Dashboard->editStatus()
+#1 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2024-02-21 17:56:22 --> Too few arguments to function App\Controllers\Dashboard::editStatus(), 0 passed in C:\xampp\htdocs\Playground\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Dashboard->editStatus()
+#1 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2024-02-21 17:58:01 --> Too few arguments to function App\Controllers\Dashboard::editStatus(), 0 passed in C:\xampp\htdocs\Playground\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Dashboard->editStatus()
+#1 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2024-02-21 18:04:30 --> Too few arguments to function App\Controllers\Dashboard::editStatus(), 0 passed in C:\xampp\htdocs\Playground\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Dashboard->editStatus()
+#1 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2024-02-21 18:05:00 --> Too few arguments to function App\Controllers\Dashboard::editStatus(), 0 passed in C:\xampp\htdocs\Playground\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Dashboard->editStatus()
+#1 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2024-02-21 18:05:10 --> Too few arguments to function App\Controllers\Dashboard::editStatus(), 0 passed in C:\xampp\htdocs\Playground\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Dashboard->editStatus()
+#1 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2024-02-21 18:06:05 --> Too few arguments to function App\Controllers\Dashboard::editStatus(), 0 passed in C:\xampp\htdocs\Playground\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Dashboard->editStatus()
+#1 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2024-02-21 18:33:31 --> Too few arguments to function App\Controllers\Dashboard::index(), 0 passed in C:\xampp\htdocs\Playground\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Dashboard->index()
+#1 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}

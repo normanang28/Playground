@@ -19,9 +19,14 @@
             <span class="nav-text">Playground</span>
         </a>
         <ul aria-expanded="false">
-            <li><a href="<?= base_url('/Playground/permainan')?>">Permainan</a></li>
-            <li><a href="<?= base_url('/Playground/aktivitas')?>">Aktivitas</a></li>
+            <li><a href="<?= base_url('/Playground/list_permainan')?>">List Permainan</a></li>
+            <li><a href="<?= base_url('/Playground/pembelian_tiket')?>">Pembelian Tiket</a></li>
         </ul>
+        </li>
+        <li><a href="<?= base_url('/Laporan_Income')?>" class="ai-icon" aria-expanded="false">
+            <i class="fa-solid fa-laptop-file" title="Laporan Income"></i>
+            <span class="nav-text">Laporan Income</span>
+        </a>
         </li>
         <hr class="sidebar-divider">
         <li><a href="<?= base_url('/My_Account')?>" class="ai-icon" aria-expanded="false">

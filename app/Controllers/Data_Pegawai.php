@@ -3,6 +3,9 @@
 namespace App\Controllers;
 use CodeIgniter\Controllers;
 use App\Models\M_model;
+use Dompdf\Dompdf;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Data_Pegawai extends BaseController
 {
@@ -117,6 +120,18 @@ class Data_Pegawai extends BaseController
 
         $model->hapus('pegawai',$where);
         $model->hapus('user',$where2);
+        return redirect()->to('/Data_Pegawai');
+    }
+
+    public function reset_password($id)
+    {
+        $model=new M_model();
+        $where=array('id_user'=>$id);
+        $data=array(
+            'password'=>md5('@dmin123')
+        );
+        $model->edit('user',$data,$where);
+
         return redirect()->to('/Data_Pegawai');
     }
 }

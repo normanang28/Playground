@@ -78,10 +78,78 @@
 							<td style="text-align: center;" class="text-capitalize"><?php echo $dataa->nama_pegawai?></td>
 							<td style="text-align: center;" class="text-capitalize"><?php echo $dataa->no_telp ?></td>
 							<td>
-
-                                <a href="<?= base_url('/Data_Pegawai/edit/'.$dataa->id_pegawai_user)?>"><button class="btn btn-warning"><i class="fa-regular fa-pen-to-square"></i></button></a>
-                                <a href="<?= base_url('/Data_Pegawai/hapus/'.$dataa->id_pegawai_user)?>"><button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button></a>
+							<div class="text-center mb-1">
+							    <a onclick="openResetModal('<?= base_url('/Data_Pegawai/reset_password/'.$dataa->id_pegawai_user)?>')" class="mx-2">
+							        <button type="button" class="btn btn-info">
+							            <i class="fa-solid fa-key"></i>
+							        </button>
+							    </a>
+							    <a href="<?= base_url('/Data_Pegawai/edit/'.$dataa->id_pegawai_user)?>" class="mx-2">
+							        <button class="btn btn-warning">
+							            <i class="fa-regular fa-pen-to-square"></i>
+							        </button>
+							    </a>
+							    <a onclick="openDeleteModal('<?= base_url('/Data_Pegawai/hapus/'.$dataa->id_pegawai_user)?>')" class="mx-2">
+							        <button type="button" class="btn btn-danger">
+							            <i class="fa-solid fa-trash"></i>
+							        </button>
+							    </a>
+							</div>
                             </td>
+							<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                            <div class="modal fade" id="reset_password" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+							    <div class="modal-dialog modal-dialog-centered" role="document">
+							        <div class="modal-content">
+							            <div class="modal-header">
+							                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+							            </div>
+							            <div class="modal-body text-center">
+							                <i class="fa-solid fa-triangle-exclamation" style="font-size: 80px; color: #FFA500;"></i>
+							                <h1></h1><br>
+							                <h5>Apakah anda yakin ingin mereset password pada data ini?</h5>
+							            </div>
+							            <div class="modal-footer">
+							                <button type="button" class="btn btn-secondary light" data-bs-dismiss="modal">Kembali</button>
+							                <a id="ResetLinkPetugas" href="#">
+							                    <button type="button" class="btn btn-info">Iya, Reset Password</button>
+							                </a>
+							            </div>
+							        </div>
+							    </div>
+							</div>
+							<script>
+							    function openResetModal(resetLink) {
+							        document.getElementById('ResetLinkPetugas').href = resetLink;
+							        $('#reset_password').modal('show');
+							    }
+							</script>
+
+                            <div class="modal fade" id="delete_petugas" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+							    <div class="modal-dialog modal-dialog-centered" role="document">
+							        <div class="modal-content">
+							            <div class="modal-header">
+							                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+							            </div>
+							            <div class="modal-body text-center">
+							                <i class="fa-solid fa-triangle-exclamation" style="font-size: 80px; color: #FFA500;"></i>
+							                <h1></h1><br>
+							                <h5>Apakah anda yakin ingin menghapus data ini?</h5>
+							            </div>
+							            <div class="modal-footer">
+							                <button type="button" class="btn btn-secondary light" data-bs-dismiss="modal">Kembali</button>
+							                <a id="deleteLinkPetugas" href="#">
+							                    <button type="button" class="btn btn-danger">Iya, Hapus</button>
+							                </a>
+							            </div>
+							        </div>
+							    </div>
+							</div>
+							<script>
+							    function openDeleteModal(deleteLink) {
+							        document.getElementById('deleteLinkPetugas').href = deleteLink;
+							        $('#delete_petugas').modal('show');
+							    }
+							</script>
 						</tr>
                     <?php }?>
 					</tbody>
