@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2024 at 12:51 PM
+-- Generation Time: Feb 26, 2024 at 09:07 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -43,6 +43,29 @@ CREATE TABLE `pegawai` (
 INSERT INTO `pegawai` (`id_pegawai`, `id_pegawai_user`, `nama_pegawai`, `no_telp`, `maker_pegawai`, `tanggal_pegawai`) VALUES
 (1, 3, 'norman ang', '0813710352523', 3, '2024-02-20 16:57:51'),
 (4, 6, 'asep sumanto', '081376453652', 3, '2024-02-21 13:26:56');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pembelian_barang`
+--
+
+CREATE TABLE `pembelian_barang` (
+  `id_pb` int(4) NOT NULL,
+  `nama_pb` varchar(255) NOT NULL,
+  `nominal_pb` text NOT NULL,
+  `maker_pb` int(4) NOT NULL,
+  `tanggal_pb` datetime NOT NULL DEFAULT current_timestamp(),
+  `taggal_laporan` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pembelian_barang`
+--
+
+INSERT INTO `pembelian_barang` (`id_pb`, `nama_pb`, `nominal_pb`, `maker_pb`, `tanggal_pb`, `taggal_laporan`) VALUES
+(2, 'komputer HP', '9999000', 3, '2024-02-21 16:35:45', '2024-02-21'),
+(3, 'komputer acer', '8990000', 3, '2024-02-21 16:44:16', '2024-02-21');
 
 -- --------------------------------------------------------
 
@@ -92,7 +115,8 @@ CREATE TABLE `playground` (
 
 INSERT INTO `playground` (`id_playground`, `id_permainan_playground`, `nama_pemain`, `durasi`, `jam_mulai`, `jam_selesai`, `total_harga`, `status`, `maker_playground`, `tanggal_playground`, `tanggal_laporan`) VALUES
 (18, 2, 'norman ang', '1', '17:42:01', '18:46:01', '10.000', 2, 3, '2024-02-21 17:42:01', '2024-02-21'),
-(19, 1, 'norman ang', '1', '17:42:07', '18:47:07', '10.000', 2, 3, '2024-02-21 17:42:07', '2024-02-21');
+(19, 1, 'norman ang', '1', '17:42:07', '18:47:07', '10.000', 2, 3, '2024-02-21 17:42:07', '2024-02-21'),
+(20, 1, 'test', '1', '14:11:30', '14:13:30', '10.000', 2, 3, '2024-02-21 14:11:30', '2024-02-21');
 
 -- --------------------------------------------------------
 
@@ -127,6 +151,12 @@ ALTER TABLE `pegawai`
   ADD UNIQUE KEY `NO_TELP` (`no_telp`);
 
 --
+-- Indexes for table `pembelian_barang`
+--
+ALTER TABLE `pembelian_barang`
+  ADD PRIMARY KEY (`id_pb`);
+
+--
 -- Indexes for table `permainan`
 --
 ALTER TABLE `permainan`
@@ -157,6 +187,12 @@ ALTER TABLE `pegawai`
   MODIFY `id_pegawai` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `pembelian_barang`
+--
+ALTER TABLE `pembelian_barang`
+  MODIFY `id_pb` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `permainan`
 --
 ALTER TABLE `permainan`
@@ -166,7 +202,7 @@ ALTER TABLE `permainan`
 -- AUTO_INCREMENT for table `playground`
 --
 ALTER TABLE `playground`
-  MODIFY `id_playground` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_playground` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `user`
