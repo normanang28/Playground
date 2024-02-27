@@ -899,4 +899,14 @@ class M_model extends model
     {
         $this->db->update($table, $data, $where);
     }
+
+	public function print_nota($id_playground) {
+	    return $this->db->query(
+	        "SELECT *
+	        FROM playground
+	        JOIN permainan ON playground.id_permainan_playground = permainan.id_permainan
+	        JOIN user ON playground.maker_playground = user.id_user
+	        WHERE playground.id_playground = '".$id_playground."'"
+	    )->getResult();
+	}
 }

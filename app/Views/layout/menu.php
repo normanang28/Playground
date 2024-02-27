@@ -38,7 +38,7 @@
             <span class="nav-text">Laporan</span>
         </a>
         <ul aria-expanded="false">
-            <li><a href="<?= base_url('/Laporan/0.')?>">Laporan Income</a></li>
+            <li><a href="<?= base_url('/Laporan/laporan_income')?>">Laporan Income</a></li>
             <li><a href="<?= base_url('/Laporan/laporan_pengeluaran')?>">Laporan Pengeluaran</a></li>
         </ul>
         </li>

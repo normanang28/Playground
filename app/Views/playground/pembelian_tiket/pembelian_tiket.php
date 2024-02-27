@@ -19,10 +19,13 @@
 		            }
 		            </style>
 				    <div class="d-flex justify-content-between align-items-center mb-3">
-				        <h1></h1>
-				        <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">
-				            <i class="fa-solid fa-plus"></i> Tambah
-				        </button>
+				    <h1></h1>
+				    <div>
+					    <button type="button" class="btn btn-success mb-2 ml-auto" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">
+					        <i class="fa-solid fa-plus"></i> Tambah
+					    </button>
+					</div>
+
 
 				        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
 				            <div class="modal-dialog modal-xl">
@@ -127,13 +130,20 @@
 							<td style="text-align: center;" class="text-capitalize">Rp <?php echo $dataa->total_harga?>,00</td>
 							<td style="text-align: center;" class="text-capitalize"><?php echo $dataa->tanggal_playground?></td>
 							<td>
-							<div class="text-center mb-1">
+							<div class="d-flex justify-content-center mb-1">
+							    <a class="mx-2" href="<?= base_url('/Laporan/print_nota/'.$dataa->id_playground)?>">
+							        <button type="button" class="btn btn-info">
+							            <i class="fa-solid fa-print"></i>
+							        </button>
+							    </a>
+
 							    <a onclick="openDeleteModal('<?= base_url('/Playground/hapus_pembelian_tiket/'.$dataa->id_playground )?>')" class="mx-2">
 							        <button type="button" class="btn btn-danger">
 							            <i class="fa-solid fa-trash"></i>
 							        </button>
 							    </a>
 							</div>
+
                             </td>
 							<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 

@@ -1,0 +1,32 @@
+CRITICAL - 2024-02-27 10:54:03 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\Playground\app\Views\laporan\print_nota.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 71, Array)
+#1 C:\xampp\htdocs\Playground\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Playground\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\Playground\system\Common.php(1089): CodeIgniter\View\View->render('laporan/print_n...', Array, true)
+#4 C:\xampp\htdocs\Playground\app\Controllers\Laporan.php(347): view('laporan/print_n...', Array)
+#5 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Laporan->print_nota('18')
+#6 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#7 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2024-02-27 10:55:47 --> syntax error, unexpected end of file
+#0 C:\xampp\htdocs\Playground\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\Playground\system\Common.php(1089): CodeIgniter\View\View->render('laporan/print_n...', Array, true)
+#2 C:\xampp\htdocs\Playground\app\Controllers\Laporan.php(347): view('laporan/print_n...', Array)
+#3 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Laporan->print_nota('18')
+#4 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#5 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2024-02-27 11:46:32 --> syntax error, unexpected '?>', expecting ')'
+#0 C:\xampp\htdocs\Playground\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\Playground\system\Common.php(1089): CodeIgniter\View\View->render('laporan/print_n...', Array, true)
+#2 C:\xampp\htdocs\Playground\app\Controllers\Laporan.php(343): view('laporan/print_n...', Array)
+#3 C:\xampp\htdocs\Playground\system\CodeIgniter.php(832): App\Controllers\Laporan->print_nota('20')
+#4 C:\xampp\htdocs\Playground\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#5 C:\xampp\htdocs\Playground\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\Playground\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\Playground\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}

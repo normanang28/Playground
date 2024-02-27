@@ -335,4 +335,14 @@ class Laporan extends BaseController
             return redirect()->to('/');
         }
     }
+
+    public function print_nota($id_playground) {
+        if (session()->get('level') == 1 || session()->get('level') == 2) {
+            $model = new M_model();
+            $data['data'] = $model->print_nota($id_playground);
+            echo view('laporan/print_nota', $data);
+        } else {
+            return redirect()->to('/');
+        }
+    }
 }
